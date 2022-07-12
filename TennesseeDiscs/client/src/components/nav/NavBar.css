@@ -27,14 +27,14 @@
 
 .navFullContainer {
     width: 100%;
-    /* background-color: #F0F0F0; */
+    background-color: white;
     border-bottom: 2px solid black;
 }
 
 .navbar {
     width: 70%;    
     display: flex;
-    /* background-color: #F0F0F0; */
+    background-color: white;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
@@ -63,7 +63,7 @@
     width: 3vw;
     font-size: 1vw;
     padding: .7vw;
-    /* font-weight: bold; */
+    font-weight: bold;
 }
 
 .navbar__link:hover {

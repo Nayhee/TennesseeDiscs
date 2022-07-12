@@ -9,7 +9,7 @@ export const DiscCard = ({ disc }) => {
         <div className="card-disc-content">
 
           <div className="image_div">
-              <img src={disc.ImageUrl} alt="My Disc" />
+              <img src={disc.imageUrl} alt="My Disc" />
           </div>
 
             <div class="flightNumsContainer">

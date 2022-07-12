@@ -5,7 +5,7 @@
 .home {
     display: flex;
     flex-direction: column;
-    /* background-color: #F0F0F0; */
+    background-color: white;
     width: 70%;
     margin: auto;
     align-items: center;

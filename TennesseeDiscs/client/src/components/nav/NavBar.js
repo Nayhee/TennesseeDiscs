@@ -22,7 +22,7 @@ export const NavBar = () => {
                             <ul className="navbar">
 
                                 <li className="navbar__item">
-                                    <Link className={`navbar__link ${location.pathname === '/' ? 'active' : ''}`} to="/">HOME</Link>
+                                    <Link className="navbar__link" to="/"><i class="fa-solid fa-house-chimney fa-xl"></i></Link>
                                 </li>
 
                                 <li className="navbar__item">
