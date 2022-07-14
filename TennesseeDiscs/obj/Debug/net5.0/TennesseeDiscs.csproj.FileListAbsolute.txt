@@ -54,3 +54,4 @@ C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\clien
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\client\package.json
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\client\public\manifest.json
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\appsettings.Local.json
+C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

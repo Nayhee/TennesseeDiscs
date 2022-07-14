@@ -5,8 +5,8 @@ import { DiscList } from './disc/DiscList'
 import DiscDetails from './disc/DiscDetails';
 import DiscForm from './disc/DiscForm'
 import DiscEditForm  from "./disc/DiscEditForm"
-import {Login} from "./auth/Login";
-import {Register}  from "./auth/Register";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
 import Cart from "../components/cart/Cart";
 
 export default function ApplicationViews({ isLoggedIn, user}) {

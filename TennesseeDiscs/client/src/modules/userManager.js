@@ -1,4 +1,4 @@
-import { getToken } from "./authManager";
+import { getToken } from "../modules/authManager";
 
 const baseUrl = '/api/User';
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate, Link } from "react-router-dom";
 import { login } from "../../modules/authManager";
-import "./Header.css";
+import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -12,16 +12,13 @@ export default function Login() {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-
-    //MAYBE I CREATE CART ON LOGIN THEN PASS IT TO HOME.
-
     login(email, password)
       .then(() => navigate("/"))
       .catch(() => alert("Invalid email/password"));
   };
 
   return (
-    <form onSubmit={loginSubmit}>
+    <Form onSubmit={loginSubmit}>
       <fieldset>
         <FormGroup>
           <Label for="email">Email</Label>
@@ -47,6 +44,6 @@ export default function Login() {
           Not registered? <Link to="/register">Register</Link>
         </em>
       </fieldset>
-    </form>
+    </Form>
   );
 }

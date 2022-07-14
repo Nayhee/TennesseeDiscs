@@ -16,6 +16,14 @@ namespace TennesseeDiscs.Controllers
             _userRepository = userRepository;
         }
 
+
+        //private User GetCurrentUserProfile()
+        //{
+        //    var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        //    return _userRepository.GetByFirebaseUserId(firebaseUserId);
+        //}
+
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -60,7 +68,7 @@ namespace TennesseeDiscs.Controllers
         }
 
 
-        [HttpGet("{firebaseUserId}")]
+        [HttpGet("GetUserByFirebaseId/{firebaseUserId}")]
         public IActionResult GetUser(string firebaseUserId)
         {
             return Ok(_userRepository.GetByFirebaseUserId(firebaseUserId));
@@ -68,13 +76,12 @@ namespace TennesseeDiscs.Controllers
 
 
 
-        [HttpGet("GetCurrentUser")]
-        public IActionResult GetLoggedInUser()
-        {
-            User user = GetCurrentUserProfile();
-            user.FirebaseUserId = "ENCRYPTED ID";
-            return Ok(user);
-        }
+        //[HttpGet("GetCurrentUser")]
+        //public IActionResult GetLoggedInUser()
+        //{
+        //    User user = GetCurrentUserProfile();
+        //    return Ok(user);
+        //}
 
         [HttpGet("DoesUserExist/{firebaseUserId}")]
         public IActionResult DoesUserExist(string firebaseUserId)
@@ -89,12 +96,8 @@ namespace TennesseeDiscs.Controllers
 
 
 
-        private User GetCurrentUserProfile()
-        {
-            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            return _userRepository.GetByFirebaseUserId(firebaseUserId);
-        }
+       
 
-        
+
     }
 }

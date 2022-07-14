@@ -24,7 +24,7 @@ export const DiscCard = ({ disc }) => {
           </span></h2>
           
           <div className="DetailsButtonsContainer">
-            <Link to={`/discs/${disc.id}/details`}>
+            <Link to={`discs/${disc.id}`}>
                 <button>Details</button>
             </Link>
           </div>

@@ -1,0 +1,23 @@
+.discListPageContainer {
+    width: 70%;
+    margin: auto;
+}
+
+.add-disc-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.disc-list {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.image_div img {
+    max-width: 5vw;
+}

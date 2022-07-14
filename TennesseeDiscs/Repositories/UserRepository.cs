@@ -86,6 +86,7 @@ namespace TennesseeDiscs.Repositories
                             User user = new User
                             {
                                 Id = DbUtils.GetInt(reader, "Id"),
+                                FirebaseUserId = DbUtils.GetString(reader, "firebaseUserId"),
                                 Name = DbUtils.GetString(reader, "Name"),
                                 Email = DbUtils.GetString(reader, "Email"),
                                 UserTypeId = DbUtils.GetInt(reader, "UserTypeId"),
@@ -124,6 +125,7 @@ namespace TennesseeDiscs.Repositories
                             User user = new User
                             {
                                 Id = DbUtils.GetInt(reader, "Id"),
+                                FirebaseUserId = DbUtils.GetString(reader, "firebaseUserId"),
                                 Name = DbUtils.GetString(reader, "Name"),
                                 Email = DbUtils.GetString(reader, "Email"),
                                 UserTypeId = DbUtils.GetInt(reader, "UserTypeId"),
@@ -161,6 +163,7 @@ namespace TennesseeDiscs.Repositories
                             User user = new User
                             {
                                 Id = DbUtils.GetInt(reader, "Id"),
+                                FirebaseUserId = DbUtils.GetString(reader, "firebaseUserId"),
                                 Name = DbUtils.GetString(reader, "Name"),
                                 Email = DbUtils.GetString(reader, "Email"),
                                 UserTypeId = DbUtils.GetInt(reader, "UserTypeId"),
@@ -211,11 +214,12 @@ namespace TennesseeDiscs.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"INSERT INTO Users ([Name], Email, UserTypeId)
+                    cmd.CommandText = @"INSERT INTO Users ([Name], Email, firebaseUserId, userTypeId)
                                         OUTPUT INSERTED.ID
-                                        VALUES (@name, @email, @userTypeId)";
+                                        VALUES (@name, @email, @firebaseUserId, @userTypeId)";
                     DbUtils.AddParameter(cmd, "@name", user.Name);
                     DbUtils.AddParameter(cmd, "@email", user.Email);
+                    DbUtils.AddParameter(cmd, "@firebaseUserId", user.FirebaseUserId);
                     DbUtils.AddParameter(cmd,"@userTypeId", user.UserTypeId);
                     int id = (int)cmd.ExecuteScalar();
                     user.Id = id;
