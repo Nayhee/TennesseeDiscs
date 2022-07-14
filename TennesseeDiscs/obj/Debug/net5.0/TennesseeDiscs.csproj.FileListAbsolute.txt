@@ -53,3 +53,4 @@ C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\obj\Debug\net5.0\ref\T
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\client\package-lock.json
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\client\package.json
 C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\client\public\manifest.json
+C:\Users\natha\workspace\VS\TennesseeDiscs\TennesseeDiscs\bin\Debug\net5.0\appsettings.Local.json

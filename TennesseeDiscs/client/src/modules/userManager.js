@@ -1,4 +1,17 @@
+import { getToken } from "./authManager";
+
 const baseUrl = '/api/User';
+
+export const getLoggedInUser = () => {
+  return getToken().then((token) =>
+    fetch(baseUrl + `/GetCurrentUser`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => response.json())
+  );
+};
 
 export const getAllUsers = () => {
     return fetch(baseUrl)

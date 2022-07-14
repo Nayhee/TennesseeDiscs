@@ -8,6 +8,8 @@ namespace TennesseeDiscs.Models
     {
         public int Id { get; set; }
 
+        public string FirebaseUserId { get; set; }
+
         [Required(ErrorMessage = "Hmmm... You should really add a Name...")]
         [MaxLength(35)]
         public string Name { get; set; }

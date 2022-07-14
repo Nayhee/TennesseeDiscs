@@ -12,11 +12,11 @@ export const DiscCard = ({ disc }) => {
               <img src={disc.imageUrl} alt="My Disc" />
           </div>
 
-            <div class="flightNumsContainer">
-                    <div class="flightNum">{disc.Speed}</div>
-                    <div class="flightNum">{disc.Glide}</div>
-                    <div class="flightNum">{disc.Turn}</div>
-                    <div class="flightNum">{disc.Fade}</div>
+            <div className="flightNumsContainer">
+                    <div className="flightNum">{disc.Speed}</div>
+                    <div className="flightNum">{disc.Glide}</div>
+                    <div className="flightNum">{disc.Turn}</div>
+                    <div className="flightNum">{disc.Fade}</div>
             </div>
 
           <h2><span className="card-disc-name">

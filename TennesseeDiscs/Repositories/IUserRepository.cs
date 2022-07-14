@@ -7,6 +7,7 @@ namespace TennesseeDiscs.Repositories
     public interface IUserRepository
     {
         List<User> GetAllUsers();
+        User GetByFirebaseUserId(string firebaseUserId);
         User GetUserById(int id);
         User GetUserByEmail(string email);
         List<UserType> GetUserTypes();

@@ -25,6 +25,47 @@ namespace TennesseeDiscs.Repositories
         }
 
 
+        public User GetByFirebaseUserId(string firebaseUserId)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT u.Id, u.Name, u.firebaseUserId, u.Email, u.userTypeId, ut.Name as UserTypeName
+                                        FROM Users u
+                                        LEFT JOIN UserType ut on ut.Id=u.userTypeId
+                                        WHERE u.firebaseUserId = @FirebaseUserId";
+
+                    DbUtils.AddParameter(cmd, "@FirebaseUserId", firebaseUserId);
+
+                    User user = null;
+
+                    var reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        user = new User()
+                        {
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            FirebaseUserId = DbUtils.GetString(reader, "firebaseUserId"),
+                            Name = DbUtils.GetString(reader, "Name"),
+                            Email = DbUtils.GetString(reader, "Email"),
+                            UserTypeId = DbUtils.GetInt(reader, "userTypeId"),
+                            UserType = new UserType()
+                            {
+                                Id = DbUtils.GetInt(reader, "userTypeId"),
+                                Name = DbUtils.GetString(reader, "UserTypeName"),
+                            }
+                        };
+                    }
+                    reader.Close();
+
+                    return user;
+                }
+            }
+        }
+
+
 
         public List<User> GetAllUsers()
         {

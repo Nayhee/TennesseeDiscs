@@ -1,32 +1,37 @@
 import React from "react"
-import { Route, Routes} from "react-router-dom"
+import { Route, Routes, Navigate} from "react-router-dom"
 import { Home } from "../Home"
-import { DiscList } from './disc/DiscList.js'
-// import { DiscForm} from './disc/DiscForm'
-// import { DiscEditForm } from "./disc/DiscEditForm"
-import { Learn } from "../Learn";
-import { Login } from "./auth/Login";
-import { Register } from "./auth/Register";
+import { DiscList } from './disc/DiscList'
+import DiscDetails from './disc/DiscDetails';
+import DiscForm from './disc/DiscForm'
+import DiscEditForm  from "./disc/DiscEditForm"
+import {Login} from "./auth/Login";
+import {Register}  from "./auth/Register";
+import Cart from "../components/cart/Cart";
 
-export const ApplicationViews = () => {
+export default function ApplicationViews({ isLoggedIn, user}) {
     
     return (
-        <>
-            <Routes>
-                    <Route exact path="/" element={
-                            <Home/> 
-                    } />
-                    <Route exact path="/discs" element={
-                            <DiscList/> 
-                    } />
-                    <Route exact path="/learn" element={
-                            <Learn/> 
-                    } />
+            <main>
+                <Routes>
+                        <Route path="/">
 
-                    <Route exact path="/login" element={Login}/>
-                    <Route exact path="/register" element={Register}/>
-                   
-            </Routes>
-        </>
+                                <Route index element={isLoggedIn ? <Home/> : <Navigate to="/login"/>} />
+
+                                <Route path="discs">
+                                        <Route index element={<DiscList user={user} />} />
+                                        <Route path="discs/:id" element={<DiscDetails />} />
+                                        <Route path="discs/Create" element={<DiscForm user={user} />} />
+                                        <Route path="edit/:discId" element={<DiscEditForm />} />
+                                </Route>
+
+                                <Route path="login" element={<Login />} />
+                                <Route path="register" element={<Register />} />
+
+                                <Route path="cart" element={<Cart user={user} />} />
+
+                        </Route>
+                </Routes>
+            </main>
     )
 }
