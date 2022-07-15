@@ -1,6 +1,7 @@
 import React from "react"
 import "./Disc.css"
 import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 
 export const DiscCard = ({ disc }) => {
@@ -12,20 +13,21 @@ export const DiscCard = ({ disc }) => {
               <img src={disc.imageUrl} alt="My Disc" />
           </div>
 
-            <div className="flightNumsContainer">
-                    <div className="flightNum">{disc.Speed}</div>
-                    <div className="flightNum">{disc.Glide}</div>
-                    <div className="flightNum">{disc.Turn}</div>
-                    <div className="flightNum">{disc.Fade}</div>
-            </div>
-
           <h2><span className="card-disc-name">
-            {disc.NamePlastic}
+            {disc.name}
           </span></h2>
+
+          <div className="flightNumsContainer">
+                    <div className="flightNum">{disc.speed}</div>
+                    <div className="flightNum">{disc.glide}</div>
+                    <div className="flightNum">{disc.turn}</div>
+                    <div className="flightNum">{disc.fade}</div>
+          </div>
+
           
           <div className="DetailsButtonsContainer">
-            <Link to={`discs/${disc.id}`}>
-                <button>Details</button>
+            <Link className="DetailsButtonDiv" to={`discs/${disc.id}`}>
+                <Button className="DetailsButton">View Details</Button>
             </Link>
           </div>
 

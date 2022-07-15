@@ -37,9 +37,21 @@ export default function Header({isLoggedIn, userType}) {
 
                                 {isLoggedIn && userType === 1 && (
                                     <li className="navbar__item">
-                                        <Link className={`navbar__link ${location.pathname === '/admin' ? 'active' : ''}`} to="/aags">Admin</Link>
+                                        <Link className={`navbar__link ${location.pathname === '/admin' ? 'active' : ''}`} to="/admin">Admin</Link>
                                     </li>
                                 )}
+
+                                {isLoggedIn && (
+                                    <li className="navbar__item">
+                                        <Link className={`navbar__link ${location.pathname === '/cart' ? 'active' : ''}`} to="/cart">Cart</Link>
+                                    </li>
+                                )}
+
+                                
+                                <li className="navbar__item">
+                                    <Link className={`navbar__link ${location.pathname === '/learn' ? 'active' : ''}`} to="/learn">Learn</Link>
+                                </li>
+                                
 
                                 {isLoggedIn && (
                                     <li className="navbar__item">

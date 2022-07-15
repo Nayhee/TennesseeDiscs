@@ -17,11 +17,11 @@ namespace TennesseeDiscs.Controllers
         }
 
 
-        //private User GetCurrentUserProfile()
-        //{
-        //    var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
-        //    return _userRepository.GetByFirebaseUserId(firebaseUserId);
-        //}
+        private User GetCurrentUserProfile()
+        {
+            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            return _userRepository.GetByFirebaseUserId(firebaseUserId);
+        }
 
 
         [HttpGet]
@@ -76,12 +76,13 @@ namespace TennesseeDiscs.Controllers
 
 
 
-        //[HttpGet("GetCurrentUser")]
-        //public IActionResult GetLoggedInUser()
-        //{
-        //    User user = GetCurrentUserProfile();
-        //    return Ok(user);
-        //}
+        [HttpGet("GetCurrentUser")]
+        public IActionResult GetLoggedInUser()
+        {
+            User user = GetCurrentUserProfile();
+            user.FirebaseUserId = "ENCRYPTED YO";
+            return Ok(user);
+        }
 
         [HttpGet("DoesUserExist/{firebaseUserId}")]
         public IActionResult DoesUserExist(string firebaseUserId)

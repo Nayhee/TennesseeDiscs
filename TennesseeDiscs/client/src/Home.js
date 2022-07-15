@@ -23,7 +23,7 @@ export const Home = () => {
 
                         <div className="home_about">
                             <h2>What is Tennessee Discs?</h2>
-                            <p>Tennessee Discs is a digital retailer of premium disc golf gear, including new and used discs, bags and apparel. Tennessee Discs was founded in 2021 with one purpose in mind, to grow the game. We help new and existing players find the gear that's right for them at an affordable cost.</p>
+                            <p>Tennessee Discs is a digital retailer of premium disc golf gear, including new and used discs, bags and apparel. Tennessee Discs was founded in 2021 with one purpose in mind, to grow the game. We help new and existing players find the gear that's right for them at an affordable cost. Let's find your game. </p>
                             <img src="images/kids3.jpg"/>
 
                         </div>

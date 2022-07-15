@@ -149,7 +149,7 @@ namespace TennesseeDiscs.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"SELECT d.*, 
-                                        b.Id as BrandId, b.Name as BrandName,
+                                        b.Name as BrandName,
                                         t.Id as TagId, t.Name as TagName
                                         FROM Disc d 
                                         JOIN Brand b on b.Id=d.brandId
@@ -186,17 +186,17 @@ namespace TennesseeDiscs.Repositories
                                     Description = DbUtils.GetString(reader, "Description"),
                                     Brand = new Brand()
                                     {
-                                        Id = DbUtils.GetInt(reader, "BrandsId"),
+                                        Id = DbUtils.GetInt(reader, "brandId"),
                                         Name = DbUtils.GetString(reader, "BrandName"),
                                     },
                                     Tags = new List<Tag>()
                                 };
                             }
-                            if(DbUtils.IsNotDbNull(reader, "TagsId"))
+                            if(DbUtils.IsNotDbNull(reader, "TagId"))
                             {
                                 disc.Tags.Add(new Tag()
                                 {
-                                    Id = DbUtils.GetInt(reader, "TagsId"),
+                                    Id = DbUtils.GetInt(reader, "TagId"), 
                                     Name = DbUtils.GetString(reader, "TagName")
                                 });
                             }

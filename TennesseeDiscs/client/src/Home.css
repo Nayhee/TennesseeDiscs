@@ -1,17 +1,15 @@
 .home_container {
     width: 100%;
+    background-color: #F0F0F0;
 }
 
 .home {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    width: 70%;
+    width: 72%;
     margin: auto;
     align-items: center;
     justify-content: center;
-    /* border-right: 2px solid #F0F0F0;
-    border-left: 2px solid #F0F0F0; */
 }
 
 .home_pic {
@@ -20,16 +18,12 @@
     justify-content: center;
 }
 
-.home_pic img {
+.imgHome {
     display: flex;
     flex-direction: column;
-    /* background-color: #F0F0F0; */
+    background-color: #F0F0F0;
     width: 100%;
     z-index: -1;
-}
-
-.imgHome {
-    opacity: 85%;
 }
 
 .textOnPic {
@@ -59,9 +53,9 @@
 
 .homeAboutAndWhy {
     display: flex;
-    width: 100%;
+    width: 90%;
     color: black;
-    /* background-color: #F0F0F0; */
+    background-color: #F0F0F0;
     margin-top: -5vw;
     line-height: 1.5;
 }
@@ -69,7 +63,7 @@
 .home_about {
     width: 50%;
     margin-top: 1vw;
-    padding: .5vw;
+    padding: 0vw .5vw .5vw .5vw;
 }
 
 .homeAboutAndWhy h2 {
@@ -88,7 +82,7 @@
 .home_why {
     width: 50%;
     margin-top: 1vw;
-    padding: .5vw 1vw 1vw 1vw;
+    padding: 0vw .5vw .5vw .5vw;
 }
 
 
