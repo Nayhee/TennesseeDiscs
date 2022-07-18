@@ -12,7 +12,6 @@ namespace TennesseeDiscs.Models
         [MaxLength(35)]
         public string Name { get; set; }
         [Required]
-        [DisplayName("Brand")]
         public int BrandId { get; set; }
         [Required]
         public Brand Brand { get; set; }
@@ -37,7 +36,6 @@ namespace TennesseeDiscs.Models
         public string Description { get; set; }
 
         [Required]
-        [DisplayName("Type")]
         public int DiscTypeId { get; set; }
       
         public DiscType DiscType { get; set; }

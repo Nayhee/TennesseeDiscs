@@ -18,7 +18,7 @@ export const getAllDiscs = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(disc),
-    });
+    }).then(response => response.json());
   };
 
   export const deleteDisc = (id) => {
@@ -35,4 +35,12 @@ export const updateDisc  = (editedDisc) => {
         },
         body: JSON.stringify(editedDisc)
     }).then(data => data.json());
+}
+
+
+
+
+export const getAllBrands = () => {
+  return fetch(`${baseUrl}/GetBrands`)
+  .then(res => res.json())
 }

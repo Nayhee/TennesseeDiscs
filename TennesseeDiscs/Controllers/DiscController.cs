@@ -62,6 +62,12 @@ namespace TennesseeDiscs.Controllers
             return NoContent();
         }
 
+        [HttpGet("GetBrands")]
+        public IActionResult GetBrands()
+        {
+            return Ok(_discRepository.GetAllBrands());
+        }
+
 
     }
 }

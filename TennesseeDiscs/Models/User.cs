@@ -18,7 +18,6 @@ namespace TennesseeDiscs.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        [DisplayName("Type")]
         public int UserTypeId { get; set; }
         public UserType UserType { get; set; }
 
